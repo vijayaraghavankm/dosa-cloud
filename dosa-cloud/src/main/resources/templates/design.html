@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+ <html xmlns="http:/ /www.w3.org/1999/xhtml"
+      xmlns:th="http:/ /www.thymeleaf.org">
+  <head>
+    <title>Dosa Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+  </head>
+  <body>
+    <h1>Design your Dosa!</h1>
+    <img th:src="@{/images/dosa.png}"/>
+    <form method="POST" th:object="${dosa}">
+    <div class="grid">
+      <div class="ingredient-group" id="base">
+      <h3>Designate your base:</h3>
+      <div th:each="ingredient : ${base}">
+ <input th:field="*{ingredients}" type="checkbox" 
+       th:value="${ingredient.id}"/>
+ <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      </div>
+      <div class="ingredient-group" id="topping">
+      <h3>Pick your topping:</h3>
+      <div th:each="ingredient : ${topping}">
+ <input th:field="*{ingredients}" type="checkbox" 
+       th:value="${ingredient.id}"/>
+ <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      </div>
+      <div class="ingredient-group" id="style">
+      <h3>Choose your style:</h3>
+      <div th:each="ingredient : ${style}">
+ <input th:field="*{ingredients}" type="checkbox" 
+       th:value="${ingredient.id}"/>
+ <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      </div>
+      <div class="ingredient-group" id="spread">
+      <h3>Determine your spread:</h3>
+      <div th:each="ingredient : ${spread}">
+ <input th:field="*{ingredients}" type="checkbox" 
+       th:value="${ingredient.id}"/>
+ <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      </div>
+      <div class="ingredient-group" id="fat">
+      <h3>Select your fat:</h3>
+      <div th:each="ingredient : ${fat}">
+ <input th:field="*{ingredients}" type="checkbox" 
+       th:value="${ingredient.id}"/>
+ <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      </div>
+      </div>
+      <div>
+      <h3>Name your dosa creation:</h3>
+      <input type="text" th:field="*{name}"/>
+      <br/>
+      <button>Submit Your Dosa</button>
+      </div>
+    </form>
+  </body>
+</html>
