@@ -8,10 +8,14 @@ package dosas;
  import java.util.Date;
  import lombok.Data;
  import java.io.Serializable;
+ import org.springframework.data.annotation.Id;
+ import org.springframework.data.relational.core.mapping.Table;
  
  @Data
+ @Table
  public class DosaOrder implements Serializable {
   private static final long serialVersionUID = 1L;
+  @Id
   private Long id;
   private Date placedAt;
   @NotBlank(message="Delivery name is required")
