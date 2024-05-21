@@ -3,4 +3,4 @@ spring:
     name: dosa-cloud
   datasource:
     generate-unique-name: false
-    name: tacocloud    
+    name: dosacloud    
